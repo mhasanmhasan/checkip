@@ -27,7 +27,7 @@ func (g grey) Json() ([]byte, error) {
 
 // Summary implements IpInfo.
 func (g grey) Summary() string {
-	return fmt.Sprintf("Noise: %v, Riot: %v, Last Seen: %s", g.Noise, g.Riot, na(g.LastSeen))
+	return fmt.Sprintf("IP %s, riot: %v, message: %s", g.IP, g.Riot, na(g.Message))
 }
 
 // GreyNoise is a check for GreyNoise.
@@ -64,3 +64,4 @@ func GreyNoise(ipaddr net.IP) (Check, error) {
 
 	return result, nil
 }
+
